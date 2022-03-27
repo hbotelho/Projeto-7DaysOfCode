@@ -84,3 +84,86 @@ button:hover {
 	font-family: "Ubuntu";
 	font-weight: 500;
 }
+
+.controlesDia03 {
+	display: none;
+	color: whitesmoke;
+	position: absolute;
+	font-size: 24px;
+	margin: 15px;
+	font-family: "Ubuntu";
+	font-weight: 500;
+}
+
+.resultadoDia4 {
+	display: none;
+	align-items: center;
+	flex-direction: column;
+	color: whitesmoke;
+	position: center;
+	font-size: 24px;
+	margin: 15px;
+	font-family: "Ubuntu";
+	font-weight: 500;
+}
+.dica {
+	font-size: 14px;
+}
+
+.tentativa {
+	font-size: 18px;
+	color: yellow;
+}
+
+.opaco {
+	opacity: 0.4;
+}
+
+.nova-tentativa {
+	display: none;
+}
+
+.resultadoDia5 {
+	display: none;
+	align-items: center;
+	flex-direction: column;
+	color: whitesmoke;
+	position: center;
+	font-size: 24px;
+	margin: 15px;
+	font-family: "Ubuntu";
+	font-weight: 500;
+}
+
+.item {
+	position: absolute;
+	right: 40%;
+}
+
+.submeter {
+	position: absolute;
+	right: 45%;
+}
+
+.novaLista {
+	display: none;
+	position: absolute;
+	right: 43%;
+	margin: 10px;
+}
+
+.ancora {
+	display: none;
+}
+
+.divulgaLista {
+	background: #ecf4ff;
+	color: #1c1c1c;
+	margin: 12px;
+	border-radius: 20px;
+	box-shadow: 6px 6px 6px #0e1d2f;
+	padding: 10px;
+	font-family: "Roboto Mono";
+	font-size: 12px;
+	font-weight: 400;
+}

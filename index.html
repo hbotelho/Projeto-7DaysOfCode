@@ -36,6 +36,49 @@
 		<div id="resultado" class="resultado">
 
 		</div>
+		<div id="controlesDia03" class="controlesDia03">
+			<p>Estudante Dev: em qual linguagem de programação você pretende seguir com seus estudos?</p>
+			<button id="froend" onClick="document.getElementById('pergunta02Dia03').value = 'FRONT-END';resposta01D3()" name="front-end" value="front-end">Front-End</button>
+			<button id="bckend" onClick="document.getElementById('pergunta02Dia03').value = 'BACK-END';resposta01D3()" name="back-end" value="back-end">Back-End</button>
+			<div id="pergunta02Dia03" class="pergunta02Dia03" value=""></div>
+			<div id="pergunta03Dia03" class="pergunta03Dia03" value=""></div>
+			<div id="pergunta04Dia03" class="pergunta04Dia03" value=""></div>
+			<div id="mensagemFinal" class="mensagemFinal" value=""></div>
+		</div>
+		<div id="resultadoDia4" class="resultadoDia4">
+			<p>🔮 Descubra o número oculto 🔮</p>
+			<br>
+			<label>Digite o seu palpite</label><br>
+			<label id="tentativa" class="tentativa"></label><br>
+			<input id="valor" type="number" />
+			<label class="dica">Dica: é um número entre 0 e 100</label><br>
+			<button id="chute" onclick="chutar()">Dar palpite</button>
+			<button id="nova-tentativa" class="nova-tentativa" onclick="dia04()">Nova Tentativa</button>
+			<p id="resposta"></p>
+		</div>
+		<div id="resultadoDia5" class="resultadoDia5">
+			<p>🛒Monte a sua lista de compras</p><br>
+			<label class="instrucao">Selecione a categoria e escreva o nome do produto que deseja adicionar</label><br>
+			<!-- 			<button id="comecar" class="comecar" onclick="iniciaLista()">Iniciar a lista</button><br> -->
+			<div id="lista" class="lista">
+				<button id="hortifruti" value="hortifruti" onclick="document.getElementById('ancora').value = 'catHortifruti';botoesChange()">Hortifruti</button>
+				<button id="laticinios" value="laticinios" onclick="document.getElementById('ancora').value = 'catLaticinios';botoesChange()">Laticínios</button>
+				<button id="acougue" value="acougue" onclick="document.getElementById('ancora').value = 'catAcougue';botoesChange()">Açougue</button>
+				<button id="congelados" value="congelados" onclick="document.getElementById('ancora').value = 'catCongelados';botoesChange()">Congelados</button>
+				<button id="limpeza" value="limpeza" onclick="document.getElementById('ancora').value = 'catLimpeza';botoesChange()">Limpeza</button><br><br>
+				<input id="item" type="text" class="item" placeholder="Insira o ítem da lista" /><br>
+				<button id="submeter" class="submeter" onclick="submeter()">Adicionar</button><br>
+				<button id="novaLista" class="novaLista" onclick="dia05()">Nova Lista</button><br><br>
+				<div id="ancora" class="ancora">
+					<label>Lista de Compras</label>
+					<div id="listaHort" class="divulgaLista"></div>
+					<div id="listaLat" class="divulgaLista"></div>
+					<div id="listaAcougue" class="divulgaLista"></div>
+					<div id="listaCong" class="divulgaLista"></div>
+					<div id="listaLimp" class="divulgaLista"></div>
+				</div>
+			</div><br>
+		</div>
 
 	</main>
 
