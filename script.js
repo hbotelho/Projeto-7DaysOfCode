@@ -714,6 +714,10 @@ function dia07() {
 
 	document.getElementById("ancora").style.display = "none";
 
+	document.getElementById("calcular").disabled = false;
+	document.getElementById("calcular").classList.remove("opaco");
+	document.getElementById("resultadoOperacao").innerHTML = "";
+
 	let p = document.getElementById("resultadoDia7");
 	let posicao = p.getBoundingClientRect();
 	window.scrollTo(posicao.x, posicao.y);
@@ -784,6 +788,11 @@ function divisao() {
 }
 
 function sair() {
+	document.getElementById("operador1").value = "";
+	document.getElementById("operador2").value = "";
+	document.getElementById("calcular").disabled = true;
+	document.getElementById("calcular").classList.toggle("opaco");
+
 	let elementoResultado = document.getElementById("resultadoOperacao");
 	let resultado = "<p>Programa finalizado. Até a próxima!</p>";
 	elementoResultado.innerHTML = resultado;
