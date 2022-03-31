@@ -23,6 +23,7 @@ function dia01() {
 	document.getElementById("controlesDia03").style.display = "none";
 	document.getElementById("resultadoDia4").style.display = "none";
 	document.getElementById("resultadoDia5").style.display = "none";
+	document.getElementById("resultadoDia7").style.display = "none";
 
 	let numeroUm = 1;
 	let stringUm = {
@@ -92,6 +93,7 @@ function dia02() {
 	document.getElementById("controlesDia03").style.display = "none";
 	document.getElementById("resultadoDia4").style.display = "none";
 	document.getElementById("resultadoDia5").style.display = "none";
+	document.getElementById("resultadoDia7").style.display = "none";
 
 	var elementoPrograma = document.getElementById("programa");
 
@@ -156,6 +158,7 @@ function dia03() {
 	document.getElementById("resultado").style.display = "none";
 	document.getElementById("resultadoDia4").style.display = "none";
 	document.getElementById("resultadoDia5").style.display = "none";
+	document.getElementById("resultadoDia7").style.display = "none";
 
 	var elementoPrograma = document.getElementById("programa");
 
@@ -296,6 +299,8 @@ function dia04() {
 	document.getElementById("resultadoDia4").style.display = "flex";
 	document.getElementById("controlesDia03").style.display = "none";
 	document.getElementById("resultadoDia5").style.display = "none";
+	document.getElementById("resultadoDia7").style.display = "none";
+
 	let p = document.getElementById("resultadoDia4");
 	let posicao = p.getBoundingClientRect();
 	window.scrollTo(posicao.x, posicao.y);
@@ -379,6 +384,7 @@ function dia05() {
 	document.getElementById("controlesDia03").style.display = "none";
 	document.getElementById("resultadoDia4").style.display = "none";
 	document.getElementById("resultadoDia5").style.display = "flex";
+	document.getElementById("resultadoDia7").style.display = "none";
 
 	catHortifruti = [];
 	catLaticinios = [];
@@ -396,8 +402,11 @@ function dia05() {
 	document.getElementById("limpeza").classList.remove("dark");
 
 	document.getElementById("novaLista").style.display = "none";
+	document.getElementById("novaLista2").style.display = "none";
+	document.getElementById("submeter").style.display = "block";
 	document.getElementById("submeter").classList.remove("opaco");
 	document.getElementById("submeter").disabled = false;
+	document.getElementById("submeter2").style.display = "none";
 
 	let p = document.getElementById("resultadoDia5");
 	let posicao = p.getBoundingClientRect();
@@ -506,6 +515,177 @@ function dia06() {
 	botao5.classList.remove("dark");
 	botao6.classList.toggle("dark");
 	botao7.classList.remove("dark");
+
+	var elementoPrograma = document.getElementById("programa");
+
+	programa =
+		"<p>1. Você deverá criar a opção de remover algum item da lista, que será exibida junto à pergunta de “você deseja adicionar uma comida na lista de compras”?<br>2. A partir daí, caso a pessoa escolha essa opção, o programa irá imprimir os elementos presentes na lista atual, e a pessoa deverá escrever qual deles deseja remover.<br>3. Depois disso, o programa irá remover o elemento da lista e imprimir a confirmação de que o item realmente não está mais lá.<br>4. Por fim, ele voltará para o ciclo inicial de perguntas.<br><br>Se, na hora de deletar o item, o mesmo não for encontrado na lista, você deverá exibir uma mensagem avisando isso.<br><br>Lembre-se que a opção de remover um item só deverá estar disponível a partir do momento que existir ao menos um elemento dentro da lista de compras.</p>";
+
+	elementoPrograma.innerHTML = programa;
+
+	document.getElementById("resultado").style.display = "none";
+	document.getElementById("controlesDia03").style.display = "none";
+	document.getElementById("resultadoDia4").style.display = "none";
+	document.getElementById("resultadoDia5").style.display = "flex";
+	document.getElementById("resultadoDia7").style.display = "none";
+
+	catHortifruti = [];
+	catLaticinios = [];
+	catAcougue = [];
+	catCongelados = [];
+	catLimpeza = [];
+
+	document.getElementById("ancora").style.display = "none";
+	document.getElementById("ancora").value = "";
+
+	document.getElementById("hortifruti").classList.remove("dark");
+	document.getElementById("laticinios").classList.remove("dark");
+	document.getElementById("acougue").classList.remove("dark");
+	document.getElementById("congelados").classList.remove("dark");
+	document.getElementById("limpeza").classList.remove("dark");
+
+	document.getElementById("novaLista").style.display = "none";
+	document.getElementById("novaLista2").style.display = "none";
+	document.getElementById("submeter").style.display = "none";
+	document.getElementById("submeter2").style.display = "block";
+	document.getElementById("submeter2").classList.remove("opaco");
+	document.getElementById("submeter2").disabled = false;
+
+	let p = document.getElementById("resultadoDia5");
+	let posicao = p.getBoundingClientRect();
+	window.scrollTo(posicao.x, posicao.y);
+}
+
+function submeter2() {
+	let itemLista = document.getElementById("item").value;
+
+	let elementoHort = document.getElementById("listaHort");
+	let elementoLat = document.getElementById("listaLat");
+	let elementoAcougue = document.getElementById("listaAcougue");
+	let elementoCong = document.getElementById("listaCong");
+	let elementoLimp = document.getElementById("listaLimp");
+
+	// console.log(categoria);
+	// console.log(itemLista);
+	// console.log(catHortifruti);
+
+	if (document.getElementById("ancora").value == "") {
+		alert("Primeiro, selecione a CATEGORIA");
+		return dia05();
+	} else if (categoria == "catHortifruti") {
+		catHortifruti.push(itemLista);
+	} else if (categoria == "catLaticinios") {
+		catLaticinios.push(itemLista);
+	} else if (categoria == "catAcougue") {
+		catAcougue.push(itemLista);
+	} else if (categoria == "catCongelados") {
+		catCongelados.push(itemLista);
+	} else if (categoria == "catLimpeza") {
+		catLimpeza.push(itemLista);
+	} else {
+		alert("Primeiro, selecione a categoria");
+	}
+	document.getElementById("item").value = "";
+	document.getElementById("item2").value = "";
+	decisao1();
+}
+
+function decisao1() {
+	let maisItens = prompt(
+		"Deseja ADICIONAR mais ítens? Digite 1 para 'SIM' e 2 para 'NÃO'"
+	);
+
+	let elementoHort = document.getElementById("listaHort");
+	let elementoLat = document.getElementById("listaLat");
+	let elementoAcougue = document.getElementById("listaAcougue");
+	let elementoCong = document.getElementById("listaCong");
+	let elementoLimp = document.getElementById("listaLimp");
+
+	if (maisItens == "1") {
+		alert("Selecione a categoria e insira o produto");
+	} else if (maisItens == "2" || maisItens == null) {
+		elementoHort.innerHTML = "<p>Hortifruti: " + catHortifruti + "</p>";
+		elementoLat.innerHTML = "<p>Laticínios: " + catLaticinios + "</p>";
+		elementoAcougue.innerHTML = "<p>Açougue: " + catAcougue + "</p>";
+		elementoCong.innerHTML = "<p>Congelados: " + catCongelados + "</p>";
+		elementoLimp.innerHTML = "<p>Limpeza: " + catLimpeza + "</p>";
+
+		document.getElementById("ancora").style.display = "block";
+
+		let p = document.getElementById("ancora");
+		let posicao = p.getBoundingClientRect();
+		window.scrollTo(posicao.x, posicao.y);
+		decisao2();
+	} else {
+		alert("Digite 1 para 'SIM' e 2 para 'NÃO'");
+		return decisao1();
+	}
+	document.getElementById("item").value = "";
+	document.getElementById("item2").value = "";
+}
+
+function decisao2() {
+	let menosItens = prompt(
+		"Deseja REMOVER algum item da lista? Digite 1 para 'SIM' e 2 para 'NÃO'"
+	);
+
+	if (menosItens == 1) {
+		document.getElementById("removeItem").style.display = "block";
+	} else if (menosItens == 2) {
+		alert("Tudo bem. Confira sua lista e boas compras!");
+		document.getElementById("removeItem").style.display = "none";
+		document.getElementById("submeter2").classList.toggle("opaco");
+		document.getElementById("submeter2").disabled = true;
+		document.getElementById("novaLista2").style.display = "block";
+		let p = document.getElementById("ancora");
+		let posicao = p.getBoundingClientRect();
+		window.scrollTo(posicao.x, posicao.y);
+	} else {
+		alert("Digite 1 para 'SIM' e 2 para 'NÃO'");
+		return decisao2();
+	}
+	document.getElementById("item").value = "";
+	document.getElementById("item2").value = "";
+}
+
+function remover() {
+	let elementoRemover = document.getElementById("item2").value;
+
+	let elementoHort = document.getElementById("listaHort");
+	let elementoLat = document.getElementById("listaLat");
+	let elementoAcougue = document.getElementById("listaAcougue");
+	let elementoCong = document.getElementById("listaCong");
+	let elementoLimp = document.getElementById("listaLimp");
+
+	if (catHortifruti.includes(elementoRemover)) {
+		let index = catHortifruti.indexOf(elementoRemover);
+		catHortifruti.splice(index, 1);
+	} else if (catLaticinios.includes(elementoRemover)) {
+		let index = catLaticinios.indexOf(elementoRemover);
+		catLaticinios.splice(index, 1);
+	} else if (catAcougue.includes(elementoRemover)) {
+		let index = catAcougue.indexOf(elementoRemover);
+		catAcougue.splice(index, 1);
+	} else if (catCongelados.includes(elementoRemover)) {
+		let index = catCongelados.indexOf(elementoRemover);
+		catCongelados.splice(index, 1);
+	} else if (catLimpeza.includes(elementoRemover)) {
+		let index = catLimpeza.indexOf(elementoRemover);
+		catLimpeza.splice(index, 1);
+	} else {
+		alert(
+			"Item não encontrado. Insira corretamente o nome do item a ser removido da lista."
+		);
+	}
+	document.getElementById("item2").value = "";
+
+	elementoHort.innerHTML = "<p>Hortifruti: " + catHortifruti + "</p>";
+	elementoLat.innerHTML = "<p>Laticínios: " + catLaticinios + "</p>";
+	elementoAcougue.innerHTML = "<p>Açougue: " + catAcougue + "</p>";
+	elementoCong.innerHTML = "<p>Congelados: " + catCongelados + "</p>";
+	elementoLimp.innerHTML = "<p>Limpeza: " + catLimpeza + "</p>";
+
+	decisao1();
 }
 
 //-------------------------------------------------
@@ -518,4 +698,93 @@ function dia07() {
 	botao5.classList.remove("dark");
 	botao6.classList.remove("dark");
 	botao7.classList.toggle("dark");
+
+	var elementoPrograma = document.getElementById("programa");
+
+	programa =
+		'<p>1. Crie a sua própria calculadora, porém com um detalhe muito importante: cada operação deverá ser uma função diferente no seu código.<br>2. Primeiramente, a pessoa deverá escolher uma opção de operação impressa pelo programa na tela.<br>3. Depois, ela deverá inserir os dois valores que deseja utilizar, e o programa imprimirá o resultado da operação em questão.<br>4. As opções disponíveis deverão ser: soma, subtração, multiplicação, divisão, e sair. Nessa última, o programa deverá parar de ser executado, mostrando uma mensagem "Até a próxima".</p>';
+
+	elementoPrograma.innerHTML = programa;
+
+	document.getElementById("resultado").style.display = "none";
+	document.getElementById("controlesDia03").style.display = "none";
+	document.getElementById("resultadoDia4").style.display = "none";
+	document.getElementById("resultadoDia5").style.display = "none";
+	document.getElementById("resultadoDia7").style.display = "flex";
+
+	document.getElementById("ancora").style.display = "none";
+
+	let p = document.getElementById("resultadoDia7");
+	let posicao = p.getBoundingClientRect();
+	window.scrollTo(posicao.x, posicao.y);
+}
+
+var radioSelected = "";
+
+function selectRadio() {
+	var radios = document.getElementsByName("operadores");
+	for (var r = 0; r < radios.length; r++) {
+		if (radios[r].checked) {
+			radioSelected = radios[r].value;
+			console.log(radioSelected);
+		}
+	}
+}
+
+function calcular() {
+	switch (radioSelected) {
+		case "adicao":
+			adicao();
+			break;
+		case "subtracao":
+			subtracao();
+			break;
+		case "multiplicacao":
+			multiplicacao();
+			break;
+		case "divisao":
+			divisao();
+			break;
+		case "sair":
+			sair();
+			break;
+	}
+}
+
+function adicao() {
+	let operador01 = parseInt(document.getElementById("operador1").value);
+	let operador02 = parseInt(document.getElementById("operador2").value);
+	let elementoResultado = document.getElementById("resultadoOperacao");
+	let resultado = operador01 + operador02;
+	elementoResultado.innerHTML = "<p>" + resultado + "</p>";
+}
+
+function subtracao() {
+	let operador01 = parseInt(document.getElementById("operador1").value);
+	let operador02 = parseInt(document.getElementById("operador2").value);
+	let elementoResultado = document.getElementById("resultadoOperacao");
+	let resultado = operador01 - operador02;
+	elementoResultado.innerHTML = "<p>" + resultado + "</p>";
+}
+
+function multiplicacao() {
+	let operador01 = parseInt(document.getElementById("operador1").value);
+	let operador02 = parseInt(document.getElementById("operador2").value);
+	let elementoResultado = document.getElementById("resultadoOperacao");
+	let resultado = operador01 * operador02;
+	elementoResultado.innerHTML = "<p>" + resultado + "</p>";
+}
+
+function divisao() {
+	let operador01 = parseInt(document.getElementById("operador1").value);
+	let operador02 = parseInt(document.getElementById("operador2").value);
+	let elementoResultado = document.getElementById("resultadoOperacao");
+	let resultado = operador01 / operador02;
+	elementoResultado.innerHTML = "<p>" + resultado + "</p>";
+}
+
+function sair() {
+	let elementoResultado = document.getElementById("resultadoOperacao");
+	let resultado = "<p>Programa finalizado. Até a próxima!</p>";
+	elementoResultado.innerHTML = resultado;
 }

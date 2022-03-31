@@ -141,11 +141,25 @@ button:hover {
 }
 
 .submeter {
+	display: block;
+	position: absolute;
+	right: 45%;
+}
+
+.submeter2 {
+	display: none;
 	position: absolute;
 	right: 45%;
 }
 
 .novaLista {
+	display: none;
+	position: absolute;
+	right: 43%;
+	margin: 10px;
+}
+
+.novaLista2 {
 	display: none;
 	position: absolute;
 	right: 43%;
@@ -166,4 +180,29 @@ button:hover {
 	font-family: "Roboto Mono";
 	font-size: 12px;
 	font-weight: 400;
+}
+
+.removeItem {
+	display: none;
+}
+
+.botaoRemover {
+	position: absolute;
+	right: 45%;
+}
+
+.resultadoDia7 {
+	display: none;
+	align-items: center;
+	flex-direction: column;
+	color: whitesmoke;
+	position: center;
+	font-size: 24px;
+	margin: 15px;
+	font-family: "Ubuntu";
+	font-weight: 500;
+}
+
+.radio-div {
+	flex-direction: row;
 }

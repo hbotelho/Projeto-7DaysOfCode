@@ -68,7 +68,9 @@
 				<button id="limpeza" value="limpeza" onclick="document.getElementById('ancora').value = 'catLimpeza';botoesChange()">Limpeza</button><br><br>
 				<input id="item" type="text" class="item" placeholder="Insira o ítem da lista" /><br>
 				<button id="submeter" class="submeter" onclick="submeter()">Adicionar</button><br>
-				<button id="novaLista" class="novaLista" onclick="dia05()">Nova Lista</button><br><br>
+				<button id="submeter2" class="submeter2" onclick="submeter2()">Adicionar</button><br>
+				<button id="novaLista" class="novaLista" onclick="dia05()">Nova Lista</button>
+				<button id="novaLista2" class="novaLista2" onclick="dia06()">Nova Lista</button><br><br>
 				<div id="ancora" class="ancora">
 					<label>Lista de Compras</label>
 					<div id="listaHort" class="divulgaLista"></div>
@@ -76,8 +78,28 @@
 					<div id="listaAcougue" class="divulgaLista"></div>
 					<div id="listaCong" class="divulgaLista"></div>
 					<div id="listaLimp" class="divulgaLista"></div>
+				</div><br>
+				<div id="removeItem" class="removeItem">
+					<label>❌Escreva o nome do ítem a ser removido da lista❌</label><br><br>
+					<input id="item2" type="text" class="item" placeholder="Insira o ítem a remover" /><br>
+					<button id="botaoRemover" class="botaoRemover" onclick="remover()">Remover</button>
 				</div>
 			</div><br>
+		</div>
+		<div id="resultadoDia7" class="resultadoDia7">
+			<p>🔢 Calculadora básica JS 🔢</p><br><br>
+			<input id="operador1" class="operador1" type="number" placeholder="Insira o número" /><br>
+			<div class="radio-div">
+				<input type="radio" name="operadores" value="adicao" />➕
+				<input type="radio" name="operadores" value="subtracao" />➖
+				<input type="radio" name="operadores" value="multiplicacao" />✖
+				<input type="radio" name="operadores" value="divisao" />➗
+				<input type="radio" name="operadores" value="sair" />🔚
+			</div><br>
+
+			<input id="operador2" class="operador2" type="number" placeholder="Insira o número" />
+			<br><button id="calcular" class="calcular" onclick="selectRadio(),calcular()">Calcular</button><br><br>
+			<div id="resultadoOperacao"></div>
 		</div>
 
 	</main>
